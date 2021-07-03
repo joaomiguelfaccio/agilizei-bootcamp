@@ -9,6 +9,10 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  schedule:
+  # agendamento do cron, executando aos sabados, comecando as 02h até as 05 e de hora em hora
+  # 1) sabado, 02h -> 2) sabado, 03h -> 3) sabado, 04h -> 4) sabado, 05h
+  - cron:  '0 2-5 * * 6'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
